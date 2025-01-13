@@ -8,13 +8,37 @@ Given a sorted array of integers, the task is to remove the duplicates in-place 
 
 ## Solution
 
-The `RemoveDuplicateArray` class contains a method `findK` that solves this problem:
+The solution uses the **two-pointer technique**:
 
-1. It uses two pointers, `i` and `j`.
-2. `i` keeps track of the position where the next unique element should be placed.
-3. `j` iterates through the array.
-4. When a new unique element is found (i.e., `A[i] < A[j]`), it is swapped with the element at position `i+1`.
-5. The method returns `i+1`, which represents the number of unique elements.
+1. `i` tracks the position of the last unique element.
+2. `j` iterates through the array.
+3. When a new unique element is found (`A[i] < A[j]`), it is moved to the position `i + 1`.
+4. The program returns `i + 1`, which is the count of unique elements.
+
+---
+
+### Code
+
+```java
+public class RemoveDuplicateArray {
+    public static int findK(int[] A) {
+        int i = 0;
+        for (int j = 1; j < A.length; j++) {
+            if (A[i] < A[j]) {
+                int temp = A[i + 1];
+                A[i + 1] = A[j];
+                A[j] = temp;
+                i++;
+            }
+        }
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+        int[] A = {0, 1, 1, 1, 2, 2, 3};
+        System.out.println("Number of unique elements: " + findK(A));
+    }
+}
 
 ## Usage
 
