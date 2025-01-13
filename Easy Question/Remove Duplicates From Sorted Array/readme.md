@@ -51,7 +51,7 @@ To use this program, follow these steps:
 4. Compile the program using the following command:
    ```bash
    javac RemoveDuplicateArray.java
-
+   ```
 
 ## Complexity
 
