@@ -39,11 +39,16 @@ public class RemoveDuplicateArray {
         System.out.println("Number of unique elements: " + findK(A));
     }
 }
----
+
+
 ## Usage
 
-To use this program:
+To use this program, follow these steps:
 
-1. Ensure you have Java installed on your system.
-2. Save the `RemoveDuplicateArray.java` file.
-3. Compile the Java file:
+1. Ensure you have [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) installed on your system.
+2. Save the code in a file named `RemoveDuplicateArray.java`.
+3. Open your terminal and navigate to the directory where the file is saved.
+4. Compile the program using the following command:
+   ```bash
+   javac RemoveDuplicateArray.java
+
