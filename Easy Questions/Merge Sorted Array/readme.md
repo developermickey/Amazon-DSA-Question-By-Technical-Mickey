@@ -44,23 +44,35 @@ You are given two arrays `A` and `B`. The array `A` has extra space at the end t
 ### Code
 
 ```java
-public class RemoveDuplicateArray {
-    public static int findK(int[] A) {
-        int i = 0;
-        for (int j = 1; j < A.length; j++) {
-            if (A[i] < A[j]) {
-                int temp = A[i + 1];
-                A[i + 1] = A[j];
-                A[j] = temp;
-                i++;
+public class MergeSortArray {
+    public static void merge(int[] A, int m, int[] B, int n) {
+        int i = m - 1; // Index of last element in A
+        int j = n - 1; // Index of last element in B
+        int x = m + n - 1; // Index of last position in merged A
+        
+        while (i >= 0 && j >= 0) {
+            if (A[i] > B[j]) {
+                A[x--] = A[i--];
+            } else {
+                A[x--] = B[j--];
             }
         }
-        return i + 1;
+        while(j>=0){
+            A[x--] = B[j--];
+        }
     }
+    public static void main(String[] args){
+        int[] A = {1, 2, 3, 0, 0, 0};
+        int[] B = {2, 5, 6};
+        int m = 3; // Number of elements in A
+        int n = 3;
 
-    public static void main(String[] args) {
-        int[] A = {0, 1, 1, 1, 2, 2, 3};
-        System.out.println("Number of unique elements: " + findK(A));
+        merge(A, m, B, n);
+
+        for(int i = 0; i<6; i++){
+            System.out.print(A[i] + " ");
+        }
+
     }
 }
 ```
