@@ -52,3 +52,9 @@ To use this program, follow these steps:
    ```bash
    javac RemoveDuplicateArray.java
 
+
+## Complexity
+
+1. Time Complexity: 𝑂(𝑛) O(n), where 𝑛 n is the length of the array.
+2. Space Complexity: 𝑂(1) O(1), as the operation is performed in-place without extra space.
+
