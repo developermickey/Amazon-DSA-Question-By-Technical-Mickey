@@ -39,7 +39,7 @@ public class RemoveDuplicateArray {
         System.out.println("Number of unique elements: " + findK(A));
     }
 }
-
+```
 
 ## Usage
 
